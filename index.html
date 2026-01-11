@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+     <link href="./src/input.css" rel="stylesheet" />
+    <link href="./src/output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./faltu/app.js" type="module"></script>
+
+
+    <!--Links for Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-chubby/css/uicons-regular-chubby.css" />
+</head>
+
+<body class="bg-background">
+    <header class="flex flex-col items-center gap-4 p-4">
+        <div class="rounded-full overflow-hidden w-20 border-background border-2 shadow-md">
+            <img src="./images/logo1.png" alt="logo" style="width:100px;height:60px" />
+        </div>
+        <h1>
+            Weather App    @nawaz
+        </h1>
+        <p class="text-center">
+            Get the current and forecast weather information for any city
+            around the world!
+        </p>
+    </header>
+    <main class="flex flex-col gap-4">
+        <dialog id="search-dialog"
+            class="p-4 rounded-lg shadow-lg m-4 w-full md:mx-auto md:w-1/2 bg-surface backdrop-blur-sm backdrop:backdrop-blur-sm backdrop:backdrop-brightness-50 backdrop:backdrop-contrast-50">
+            <form method="dialog" class="flex flex-col gap-4 w-full">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl">Search City</h2>
+                    <button id="close-search" type="button" class="pt-1 px-2">
+                        <i class="fi fi-rc-cross"></i>
+                    </button>
+                </div>
+                <div class="flex justify-between items-center border-b-2 p-2">
+                    <input type="search" placeholder="Enter city name" name="city"
+                        class="border-none outline-none flex-1 mr-2" />
+                    <span id="loading" class="hidden">
+                        <div class="w-4 h-4 border-2 border-t-transparent rounded-full animate-spin"></div>
+                    </span>
+                </div>
+                <div id="search-results"></div>
+            </form>
+        </dialog>
+        <section id="actions" class="flex flex-row flex-wrap justify-evenly items-center gap-4 p-4">
+            <button id="my-location"
+                class="pt-1 px-2 md:py-2 md:px-4 rounded-lg border-primary border-2 bg-primary shadow-md hover:bg-primary/80 hover:scale-105 transition-all duration-200 active:scale-95">
+                <span class="align-middle">
+                    <i class="fi fi-rc-location-crosshairs"></i>
+                </span>
+                <span class="hidden md:inline"> Use My Location </span>
+            </button>
+            <button id="search-city" class="border-b-2 px-2 py-1 md:px-4 cursor-text">
+                <span class="align-middle md:mr-2">
+                    <i class="fi fi-rc-search"></i>
+                </span>
+                <span class="">Search Cities</span>
+            </button>
+            <button id="toggle-units" class="border-2 border-primary rounded-lg overflow-hidden flex gap-0">
+                <span class="active inline-block py-1 px-2 md:py-2 md:px-4">&deg;C</span>
+                <span class="inline-block py-1 px-2 md:py-2 md:px-4">&deg;F</span>
+            </button>
+            <select id="recent-cities" class="p-2 rounded-lg">
+                <option value="" disabled selected>Recent Cities</option>
+            </select>
+        </section>
+        <section id="current-weather" class="m-4 md:max-w-3/4 md:mx-auto flex flex-col gap-4 md:gap-8">
+            Current Weather Data will be displayed here
+        </section>
+        <section id="forecast-weather" class="m-4 md:max-w-3/4 md:mx-auto flex flex-col gap-4 md:gap-8">
+            Forecast Weather Data will be displayed here
+        </section>
+    </main>
+    <footer class="flex flex-col md:flex-row justify-evenly gap-2 items-center flex-wrap m-2 md:mx-4">
+        <div class="flex items-center rounded-lg">
+            <img src="./images/OpenWeatherLogo.png" alt="OpenWeatherMap" class="w-32" />
+            <p class="p-2">
+                Weather Data provided by<br />
+                <a href="https://openweathermap.org/" target="_blank" class="underline text-blue-500">
+                    OpenWeather
+                </a>
+            </p>
+        </div>
+
+        <a href="https://github.com/nawaz703/weather-project" target="_blank" class="bg-primary py-2 px-4 rounded-lg">
+            <img src="./images/github.png" alt="GitHub" class="w-6 inline" />
+            <p class="inline align-middle">Source Code</p>
+        </a>
+    </footer>
+</body>
+
+</html>
